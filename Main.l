@@ -15,7 +15,7 @@
 . { fprintf(stderr, "Error: Unrecognized character: %c\n", yytext[0]); exit(EXIT_FAILURE); }
 
 %%
-
+int yywrap(){return 1;}
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
