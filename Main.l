@@ -10,7 +10,7 @@
 [0-9]+          { printf("Number (integer): %s\n", yytext); }
 [+*/-]          { printf("Operator: %c\n", yytext[0]); }
 [=] {printf("Assignment Operator: %c\n", yytext[0]);}
-[a-zA-Z_][a-zA-Z0-9_]* { printf("Identifier: %s\n", yytext); }
+[a-zA-Z_$][a-zA-Z0-9_]* { printf("Identifier: %s\n", yytext); }
 
 . { fprintf(stderr, "Error: Unrecognized character: %c\n", yytext[0]); exit(EXIT_FAILURE); }
 
